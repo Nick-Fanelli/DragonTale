@@ -5,8 +5,8 @@ import entity.enemy.Enemy;
 import entity.powerups.JumpCrystal;
 import entity.powerups.PowerUp;
 import tileMap.TileMap;
+import utils.ImageUtils;
 
-import javax.imageio.ImageIO;
 import java.awt.*;
 import java.awt.image.BufferedImage;
 import java.util.ArrayList;
@@ -14,39 +14,40 @@ import java.util.HashMap;
 
 public class Player extends MapObject {
 
-    // player stuff
+    // Player Variables
     private int health;
     private int maxHealth;
     private int fire;
     private int maxFire;
+    private int xp;
     private boolean dead;
     private boolean flinching;
     private long flinchTimer;
 
-    // powerup
+    // Power-Up Booleans
     private boolean isJumPowerUp = false;
 
-    // fireball
+    // Fireball Variables
     private boolean firing;
     private int fireCost;
     private int fireBallDamage;
     private ArrayList<FireBall> fireBalls;
 
-    // scratch
+    // Scratching attack
     private boolean scratching;
     private int scratchDamage;
     private int scratchRange;
 
-    // gliding
+    // Gliding Control
     private boolean gliding;
 
-    // animations
+    // Animation
     private ArrayList<BufferedImage[]> sprites;
     private final int[] numFrames = {
             2, 8, 1, 2, 4, 2, 5
     };
 
-    // animation actions
+    // Animation Actions
     private static final int IDLE = 0;
     private static final int WALKING = 1;
     private static final int JUMPING = 2;
@@ -79,56 +80,47 @@ public class Player extends MapObject {
         health = maxHealth = 5;
         fire = maxFire = 2500;
 
-        fireCost = 200;
+        xp = 0;
+
+        fireCost = 500;
         fireBallDamage = 5;
         fireBalls = new ArrayList<FireBall>();
 
         scratchDamage = 3;
         scratchRange = 40;
 
-        // load sprites
-        try {
+        // Load Sprites
+        BufferedImage spritesheet = ImageUtils.loadImage("/Sprites/Player/playersprites.gif");
 
-            BufferedImage spritesheet = ImageIO.read(
-                    getClass().getResourceAsStream(
-                            "/Sprites/Player/playersprites.gif"
-                    )
-            );
+        sprites = new ArrayList<BufferedImage[]>();
+        for(int i = 0; i < 7; i++) {
 
-            sprites = new ArrayList<BufferedImage[]>();
-            for(int i = 0; i < 7; i++) {
+            BufferedImage[] bi =
+                    new BufferedImage[numFrames[i]];
 
-                BufferedImage[] bi =
-                        new BufferedImage[numFrames[i]];
+            for(int j = 0; j < numFrames[i]; j++) {
 
-                for(int j = 0; j < numFrames[i]; j++) {
-
-                    if(i != SCRATCHING) {
-                        bi[j] = spritesheet.getSubimage(
-                                j * width,
-                                i * height,
-                                width,
-                                height
-                        );
-                    }
-                    else {
-                        bi[j] = spritesheet.getSubimage(
-                                j * width * 2,
-                                i * height,
-                                width * 2,
-                                height
-                        );
-                    }
-
+                if(i != SCRATCHING) {
+                    bi[j] = spritesheet.getSubimage(
+                            j * width,
+                            i * height,
+                            width,
+                            height
+                    );
                 }
-
-                sprites.add(bi);
+                else {
+                    bi[j] = spritesheet.getSubimage(
+                            j * width * 2,
+                            i * height,
+                            width * 2,
+                            height
+                    );
+                }
 
             }
 
-        }
-        catch(Exception e) {
-            e.printStackTrace();
+            sprites.add(bi);
+
         }
 
         animation = new Animation();
@@ -139,13 +131,15 @@ public class Player extends MapObject {
         sfx = new HashMap<String, AudioPlayer>();
         sfx.put("jump", new AudioPlayer("/SFX/jump.mp3"));
         sfx.put("scratch", new AudioPlayer("/SFX/scratch.mp3"));
-        sfx.put("fireball", new AudioPlayer("/SFX/fireball.wav", -15));
+        sfx.put("fireball", new AudioPlayer("/SFX/fireball.wav", -20));
+        sfx.put("gliding", new AudioPlayer("/SFX/wind.wav"));
     }
 
     public int getHealth() { return health; }
     public int getMaxHealth() { return maxHealth; }
     public int getFire() { return fire; }
     public int getMaxFire() { return maxFire; }
+    public int getXP() { return xp; }
     public boolean isDead() {return isDead();}
 
     public void setFiring() {
@@ -169,6 +163,10 @@ public class Player extends MapObject {
     public void rewardFireballs(int amount) {
         fire += amount * 100;
         if(fire > maxFire) fire = maxFire;
+    }
+
+    public void rewardXP(int amount) {
+        xp += amount;
     }
 
     public void checkAttack(ArrayList<Enemy> enemies) {
@@ -347,6 +345,9 @@ public class Player extends MapObject {
             }
         }
 
+        // Make sure gliding sfx stops playing
+        if(sfx.get("gliding").isPlaying() && !gliding || dy == 0) {sfx.get("gliding").stop();}
+
         // set animation
         if(scratching) {
             if(currentAction != SCRATCHING) {
@@ -369,6 +370,7 @@ public class Player extends MapObject {
             if(gliding) {
                 if(currentAction != GLIDING) {
                     currentAction = GLIDING;
+                    sfx.get("gliding").play();
                     animation.setFrames(sprites.get(GLIDING));
                     animation.setDelay(100);
                     width = 30;
@@ -439,20 +441,3 @@ public class Player extends MapObject {
     }
 
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

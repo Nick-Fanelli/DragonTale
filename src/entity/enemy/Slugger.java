@@ -27,6 +27,7 @@ public class Slugger extends Enemy {
 
 		rewardedHealth = 0;
 		rewardedFireballPower = 3;
+		rewardedXP = 1;
 		
 		health = maxHealth = 2;
 		damage = 1;

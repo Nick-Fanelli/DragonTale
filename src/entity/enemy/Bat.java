@@ -30,6 +30,7 @@ public class Bat extends Enemy {
 
         rewardedHealth = 1;
         rewardedFireballPower = 1;
+        rewardedXP = 3;
 
         maxHealth = health = 2;
         damage = 2;

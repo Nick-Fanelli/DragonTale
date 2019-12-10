@@ -40,6 +40,7 @@ public class Arachnik extends Enemy {
 
         rewardedHealth = 1;
         rewardedFireballPower = 0;
+        rewardedXP = 2;
 
         waitSeconds = 3;
 

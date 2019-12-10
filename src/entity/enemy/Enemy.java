@@ -13,6 +13,7 @@ public class Enemy extends MapObject {
 
     protected int rewardedHealth;
     protected int rewardedFireballPower;
+    protected int rewardedXP;
 
     protected boolean flinching;
     protected long flinchTimer;
@@ -43,6 +44,7 @@ public class Enemy extends MapObject {
     private void reward(Player player) {
         player.rewardHealth(rewardedHealth);
         player.rewardFireballs(rewardedFireballPower);
+        player.rewardXP(rewardedXP);
     }
 
     public void hit(Player player, int damage) {

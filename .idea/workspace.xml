@@ -1,7 +1,22 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="36dc5b35-c821-4ced-83a7-6e7aa45d15b9" name="Default Changelist" comment="" />
+    <list default="true" id="36dc5b35-c821-4ced-83a7-6e7aa45d15b9" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/res/todo" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/DragonTale/gameState/GameStateManager.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/DragonTale/gameState/GameStateManager.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/DragonTale/gameState/states/MenuState.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/DragonTale/gameState/states/MenuState.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/res/HUD/hud.gif" beforeDir="false" afterPath="$PROJECT_DIR$/res/HUD/hud.gif" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/res/SFX/fireball.wav" beforeDir="false" afterPath="$PROJECT_DIR$/res/SFX/fireball.wav" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/entity/HUD.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/entity/HUD.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/entity/Player.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/entity/Player.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/entity/enemy/Arachnik.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/entity/enemy/Arachnik.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/entity/enemy/Bat.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/entity/enemy/Bat.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/entity/enemy/Enemy.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/entity/enemy/Enemy.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/entity/enemy/Slugger.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/entity/enemy/Slugger.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/gameState/states/MenuState.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/gameState/states/MenuState.java" afterDir="false" />
+    </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -15,7 +30,11 @@
       </list>
     </option>
   </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
   <component name="ProjectId" id="1URN6Sdi3s4pOKZNgziHQw7xncQ" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="PropertiesComponent">
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="project.structure.last.edited" value="Modules" />
@@ -66,5 +85,18 @@
       <updated>1575315271772</updated>
     </task>
     <servers />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State>
+              <option name="COLUMN_ORDER" />
+            </State>
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
 </project>
