@@ -36,7 +36,9 @@ public class Level3State extends Level {
 
     @Override
     protected void populateEnemies() {
-
+        Bat bat = new Bat(tileMap, 100, 100);
+        bat.setPosition(100, 200);
+        enemies.add(bat);
     }
 
     @Override

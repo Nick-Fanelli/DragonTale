@@ -1,6 +1,7 @@
 package gameState;
 
 import audio.AudioPlayer;
+import gameState.states.LevelsState;
 import gameState.states.levels.Level1State;
 import gameState.states.MenuState;
 import gameState.states.levels.Level2State;
@@ -13,7 +14,8 @@ public class GameStateManager {
 
     private Graphics2D g;
 
-    public static int MENU_STATE = 0;
+    public static int MENU_STATE = -1;
+    public static int LEVELS_STATE = 0;
     public static int LEVEL_1_STATE = 1;
     public static int LEVEL_2_STATE = 2;
     public static int LEVEL_3_STATE = 3;
@@ -33,6 +35,8 @@ public class GameStateManager {
         AudioPlayer.StopAllSound();
         if(state == MENU_STATE)
             activeState = new MenuState(this);
+        if(state == LEVELS_STATE)
+            activeState = new LevelsState(this);
         if(state == LEVEL_1_STATE)
             activeState = new Level1State(this);
         if(state == LEVEL_2_STATE)
