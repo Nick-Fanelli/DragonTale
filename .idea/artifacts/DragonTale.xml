@@ -1,10 +1,11 @@
 <component name="ArtifactManager">
-  <artifact type="jar" name="DragonTale">
+  <artifact type="jar" build-on-make="true" name="DragonTale">
     <output-path>$PROJECT_DIR$/out/artifacts/DragonTale</output-path>
     <root id="archive" name="DragonTale.jar">
       <element id="directory" name="META-INF">
         <element id="file-copy" path="$PROJECT_DIR$/META-INF/MANIFEST.MF" />
       </element>
+      <element id="module-output" name="DragonTale" />
     </root>
   </artifact>
 </component>

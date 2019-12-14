@@ -30,6 +30,7 @@ public class GameStateManager {
     }
 
     public void setState(int state) {
+        AudioPlayer.StopAllSound();
         if(state == MENU_STATE)
             activeState = new MenuState(this);
         if(state == LEVEL_1_STATE)

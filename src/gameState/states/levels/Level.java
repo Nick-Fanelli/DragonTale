@@ -46,7 +46,7 @@ public abstract class Level extends GameState {
         powerUps = new ArrayList<>();
         explosions = new ArrayList<>();
 
-        backgroundMusic = new AudioPlayer("/Music/level1-1.mp3", -10);
+        backgroundMusic = new AudioPlayer("/Music/level1-1.wav", -10);
         backgroundMusic.play();
     }
 

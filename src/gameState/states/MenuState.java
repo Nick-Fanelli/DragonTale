@@ -67,7 +67,7 @@ public class MenuState extends GameState {
     private void select() {
         switch (currentChoice) {
             case 0:
-                gsm.setState(GameStateManager.LEVEL_2_STATE);
+                gsm.setState(GameStateManager.LEVEL_1_STATE);
                 break;
             case 1:
                 // Help

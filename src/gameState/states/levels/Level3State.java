@@ -23,8 +23,6 @@ public class Level3State extends Level {
         player = new Player(tileMap);
         player.setPosition(100, 200);
 
-        hud = new HUD(player);
-
         bg = new Background("/Backgrounds/grassbg1.gif", 0.1);
 
         populateEnemies();
@@ -43,24 +41,20 @@ public class Level3State extends Level {
 
     @Override
     protected void populatePowerups() {
-        JumpCrystal jumpCrystal = new JumpCrystal(tileMap);
-        jumpCrystal.setPosition(200, 200);
-
-        powerUps.add(jumpCrystal);
+//        JumpCrystal jumpCrystal = new JumpCrystal(tileMap);
+//        jumpCrystal.setPosition(200, 200);
+//
+//        powerUps.add(jumpCrystal);
     }
 
     @Override
     protected void reset() {
-        backgroundMusic.stop();
         gsm.setState(GameStateManager.LEVEL_3_STATE);
     }
 
     @Override
     public void update() {
         super.update();
-        if (gsm.getActiveState() == this && !backgroundMusic.isPlaying()) {
-            backgroundMusic.play();
-        }
     }
 
     @Override
