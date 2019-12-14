@@ -20,7 +20,7 @@ public class Level2State extends Level {
     public void init() {
         super.init();
         tileMap = new TileMap(30);
-        tileMap.loadTiles("/Tilesets/grasstileset.gif");
+        tileMap.loadTiles("/Tilesets/cavetileset.png");
         tileMap.loadMap("/Maps/level2-1.map");
         tileMap.setPosition(0, 0);
         tileMap.setTween(1);
@@ -30,7 +30,7 @@ public class Level2State extends Level {
 
         hud = new HUD(player);
 
-        bg = new Background("/Backgrounds/grassbg1.gif", 0.1);
+        bg = new Background("/Backgrounds/cave-background.png", 0.1);
 
         isArachnikCompatible = true;
 
