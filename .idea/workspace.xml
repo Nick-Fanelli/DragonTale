@@ -2,26 +2,19 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="36dc5b35-c821-4ced-83a7-6e7aa45d15b9" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/res/todo" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/DragonTale/gameState/GameStateManager.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/DragonTale/gameState/GameStateManager.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/DragonTale/gameState/states/MenuState.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/DragonTale/gameState/states/MenuState.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/res/HUD/hud.gif" beforeDir="false" afterPath="$PROJECT_DIR$/res/HUD/hud.gif" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/res/SFX/fireball.wav" beforeDir="false" afterPath="$PROJECT_DIR$/res/SFX/fireball.wav" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/entity/HUD.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/entity/HUD.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/entity/Player.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/entity/Player.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/entity/enemy/Arachnik.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/entity/enemy/Arachnik.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/entity/enemy/Bat.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/entity/enemy/Bat.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/entity/enemy/Enemy.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/entity/enemy/Enemy.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/entity/enemy/Slugger.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/entity/enemy/Slugger.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/gameState/states/MenuState.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/gameState/states/MenuState.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/res/todo" beforeDir="false" afterPath="$PROJECT_DIR$/res/todo" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/Game.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/Game.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ExportToHTMLSettings">
+    <option name="printScope" value="1" />
+    <option name="OUTPUT_DIRECTORY" value="$PROJECT_DIR$/exportToHTML" />
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -37,7 +30,7 @@
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="PropertiesComponent">
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
-    <property name="project.structure.last.edited" value="Modules" />
+    <property name="project.structure.last.edited" value="Artifacts" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
     <property name="restartRequiresConfirmation" value="false" />
@@ -65,9 +58,21 @@
     </option>
   </component>
   <component name="RunManager">
+    <configuration default="true" type="Applet">
+      <option name="MAIN_CLASS_NAME" value="main.Game" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="DragonTale" type="Application" factoryName="Application">
       <option name="MAIN_CLASS_NAME" value="main.Game" />
       <module name="DragonTale" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="Application" factoryName="Application">
+      <option name="MAIN_CLASS_NAME" value="main.Game" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
