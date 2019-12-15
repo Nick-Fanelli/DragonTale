@@ -7,12 +7,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="36dc5b35-c821-4ced-83a7-6e7aa45d15b9" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/gameState/states/LevelsState.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/entity/WebString.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/DragonTale/DragonTale.jar" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/DragonTale/DragonTale.jar" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/gameState/GameStateManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/gameState/GameStateManager.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/gameState/states/MenuState.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/gameState/states/MenuState.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/gameState/states/levels/Level3State.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/gameState/states/levels/Level3State.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/res/todo" beforeDir="false" afterPath="$PROJECT_DIR$/res/todo" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
