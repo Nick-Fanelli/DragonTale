@@ -9,11 +9,13 @@
     <list default="true" id="36dc5b35-c821-4ced-83a7-6e7aa45d15b9" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/artifacts/DragonTale/DragonTale.jar" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/DragonTale/DragonTale.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/DragonTale/entity/Player.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/DragonTale/entity/Player.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/DragonTale/entity/WebString.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/DragonTale/entity/enemy/Arachnik.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/DragonTale/entity/enemy/Arachnik.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/entity/Player.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/entity/Player.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/entity/WebString.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/entity/WebString.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/entity/WebString.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/entity/enemy/Arachnik.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/entity/enemy/Arachnik.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/gameState/states/levels/Level.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/gameState/states/levels/Level.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/gameState/states/levels/Level2State.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/gameState/states/levels/Level2State.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />

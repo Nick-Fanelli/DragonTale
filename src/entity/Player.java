@@ -214,12 +214,6 @@ public class Player extends MapObject {
                 hit(e.getDamage());
             }
 
-            if(e.getClass() == Arachnik.class) {
-                System.out.printf("Player: %s, Enemy: %s%n", (((Arachnik) e).getWebString().getRectangle()), getRectangle());
-                if(intersects(((Arachnik) e).getWebString())) {
-                    hit(e.getDamage());
-                }
-            }
         }
 
     }

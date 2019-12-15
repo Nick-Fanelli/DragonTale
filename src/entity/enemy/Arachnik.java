@@ -1,7 +1,5 @@
 package entity.enemy;
 
-import entity.MapObject;
-import entity.WebString;
 import tileMap.TileMap;
 
 import javax.imageio.ImageIO;
@@ -11,7 +9,6 @@ import java.awt.image.BufferedImage;
 public class Arachnik extends Enemy {
 
     private BufferedImage sprite;
-    private WebString webString;
 
     private double startPosY;
 
@@ -25,8 +22,6 @@ public class Arachnik extends Enemy {
         super(tm);
 
         this.startPosY = startPosY;
-
-        webString = new WebString(tm);
 
         moveSpeed = 0.5;
         maxSpeed = 0.5;
@@ -65,37 +60,15 @@ public class Arachnik extends Enemy {
         return down;
     }
 
-    @Override
-    public void setPosition(double x, double y) {
-        this.x = x;
-        this.y = y;
-        webString.setPosition(x, startPosY - 15);
-    }
-
-    public WebString getWebString() {
-        return webString;
-    }
-
-    private void getNextPosition() {
-
-    }
-
     public void update() {
-        getNextPosition();
         checkTileMapCollision();
         setPosition(xtemp, ytemp);
-
-        webString.update();
 
         if(flinching) {
             long elapsed = (System.nanoTime() - flinchTimer) / 1000000;
             if(elapsed > 400) {
                 flinching = false;
             }
-        }
-
-        if(y > startPosY) {
-            webString.setHeight((int) (y - startPosY));
         }
 
         long elapsed = (System.nanoTime() - switchTimer) / 1000000;
@@ -128,8 +101,6 @@ public class Arachnik extends Enemy {
 
     public void draw(Graphics2D g) {
         setMapPosition();
-
-        webString.draw(g);
 
         g.drawImage(
                 sprite,

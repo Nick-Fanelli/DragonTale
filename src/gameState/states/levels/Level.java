@@ -94,6 +94,14 @@ public abstract class Level extends GameState {
                 i--;
                 explosions.add(new Explosion(e.getx(), e.gety()));
             }
+            if(e.getClass() == Arachnik.class) {
+                if(e.gety() != ((Arachnik) e).getStartPosY()) {
+                    if (player.getx() <= e.getx()) {
+                        if(player.getx() + player.getCWidth() >= e.getx()) {
+                        }
+                    }
+                }
+            }
         }
 
         for(int i = 0; i < explosions.size(); i++) {
