@@ -32,8 +32,6 @@ public class Level2State extends Level {
 
         bg = new Background("/Backgrounds/cave-background.png", 0.1);
 
-        isArachnikCompatible = true;
-
         populateEnemies();
     }
 

@@ -3,3 +3,4 @@ Add an XP system to the HUD                                                     
 Add XP system to keep track of enemies killed                                                                       [X]
 Add a gliding sound effect                                                                                          [X]
 Stop all sound effects when game state changes                                                                      [X]
+Allow fire ball to kill arachnik if it hits the string                                                              [ ]
