@@ -29,6 +29,8 @@ public abstract class Level extends GameState {
     protected ArrayList<PowerUp> powerUps;
     protected ArrayList<Explosion> explosions;
 
+    protected boolean isArachnikCompatible = false;
+
     protected AudioPlayer backgroundMusic;
 
     public Level(GameStateManager gsm) {
@@ -70,7 +72,7 @@ public abstract class Level extends GameState {
 
         if(tileMap != null && player != null) {
             tileMap.setPosition(GamePanel.width / 2 - player.getx(),
-                                GamePanel.height / 2 - player.gety());
+                    GamePanel.height / 2 - player.gety());
         }
 
         if(bg != null) {
@@ -95,9 +97,13 @@ public abstract class Level extends GameState {
                 explosions.add(new Explosion(e.getx(), e.gety()));
             }
             if(e.getClass() == Arachnik.class) {
-                if(e.gety() != ((Arachnik) e).getStartPosY()) {
-                    if (player.getx() <= e.getx()) {
-                        if(player.getx() + player.getCWidth() >= e.getx()) {
+                if (player.getx() >= e.getx()) {
+                    if (player.getx() + player.getWidth() <= e.getx() + e.getWidth()) {
+                        if (player.gety() <= e.gety()) {
+                            Arachnik a = (Arachnik) e;
+                            if (a.isDown()) {
+                                player.hit(a.getDamage());
+                            }
                         }
                     }
                 }
@@ -116,6 +122,19 @@ public abstract class Level extends GameState {
     @Override
     public void draw(Graphics2D g) {
         if(bg != null) bg.draw(g);
+
+        for(int i = 0; i < enemies.size(); i++) {
+            if(enemies.get(i).getClass() == Arachnik.class) {
+                Arachnik a = (Arachnik) enemies.get(i);
+                if(a.gety() != a.getStartPosY()) {
+                    g.setColor(Color.WHITE);
+                    g.drawLine(a.getx() + (int)tileMap.getx(),
+                            (int) a.getStartPosY() - 15,
+                            a.getx() + (int) tileMap.getx(),
+                            a.gety());
+                }
+            }
+        }
 
         if(tileMap != null) tileMap.draw(g);
         if(player != null) player.draw(g);
