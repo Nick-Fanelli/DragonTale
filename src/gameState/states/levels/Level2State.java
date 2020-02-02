@@ -26,7 +26,7 @@ public class Level2State extends Level {
         tileMap.setTween(1);
 
         player = new Player(tileMap);
-        player.setPosition(100, 200);
+        player.setPosition(50, 200);
 
         hud = new HUD(player);
 
@@ -85,6 +85,7 @@ public class Level2State extends Level {
     @Override
     public void update() {
         super.update();
+        System.out.printf("Player X: %s, Y: %s%n", player.getx(), player.gety());
         if(gsm.getActiveState() == this && !backgroundMusic.isPlaying()) {
             backgroundMusic.play();
         }

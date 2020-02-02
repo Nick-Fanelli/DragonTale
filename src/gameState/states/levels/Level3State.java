@@ -16,12 +16,12 @@ public class Level3State extends Level {
         super(gsm);
         tileMap = new TileMap(30);
         tileMap.loadTiles("/Tilesets/grasstileset.gif");
-        tileMap.loadMap("/Maps/level1-1.map");
+        tileMap.loadMap("/Maps/level3-1.map");
         tileMap.setPosition(0, 0);
         tileMap.setTween(1);
 
         player = new Player(tileMap);
-        player.setPosition(100, 200);
+        player.setPosition(100, 400);
 
         bg = new Background("/Backgrounds/grassbg1.gif", 0.1);
 
@@ -36,17 +36,16 @@ public class Level3State extends Level {
 
     @Override
     protected void populateEnemies() {
-        Bat bat = new Bat(tileMap, 100, 100);
-        bat.setPosition(100, 200);
-        enemies.add(bat);
+//        Bat bat = new Bat(tileMap, 100, 100);
+//        bat.setPosition(100, 200);
+//        enemies.add(bat);
     }
 
     @Override
     protected void populatePowerups() {
-//        JumpCrystal jumpCrystal = new JumpCrystal(tileMap);
-//        jumpCrystal.setPosition(200, 200);
-//
-//        powerUps.add(jumpCrystal);
+        JumpCrystal jumpCrystal = new JumpCrystal(tileMap);
+        jumpCrystal.setPosition(250, 400);
+        powerUps.add(jumpCrystal);
     }
 
     @Override

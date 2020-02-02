@@ -157,6 +157,7 @@ public abstract class Level extends GameState {
 
     @Override
     public void keyPressed(int k) {
+        if(k == KeyEvent.VK_ESCAPE) gsm.setState(GameStateManager.LEVELS_STATE);
         if(player != null) {
             if(k == KeyEvent.VK_LEFT) player.setLeft(true);
             if(k == KeyEvent.VK_RIGHT) player.setRight(true);
