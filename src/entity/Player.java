@@ -140,7 +140,7 @@ public class Player extends MapObject {
     public int getFire() { return fire; }
     public int getMaxFire() { return maxFire; }
     public int getXP() { return xp; }
-    public boolean isDead() {return isDead();}
+    public boolean isDead() { return dead; }
 
     public void setFiring() {
         firing = true;

@@ -10,20 +10,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="36dc5b35-c821-4ced-83a7-6e7aa45d15b9" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/DragonTale/DragonTale.jar" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/DragonTale/DragonTale.jar" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/DragonTale/entity/HUD.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/DragonTale/entity/HUD.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/DragonTale/gameState/GameStateManager.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/DragonTale/gameState/GameStateManager.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/gameState/GameState.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/gameState/GameState.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/gameState/GameStateManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/gameState/GameStateManager.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/gameState/states/LevelsState.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/gameState/states/LevelsState.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/gameState/states/MenuState.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/gameState/states/MenuState.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/gameState/states/levels/Level.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/gameState/states/levels/Level.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/gameState/states/levels/Level1State.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/gameState/states/levels/Level1State.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/gameState/states/levels/Level2State.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/gameState/states/levels/Level2State.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/gameState/states/levels/Level3State.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/gameState/states/levels/Level3State.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/GamePanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/GamePanel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/tileMap/Background.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/tileMap/Background.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/entity/Player.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/entity/Player.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
