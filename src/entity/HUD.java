@@ -1,5 +1,7 @@
 package entity;
 
+import main.GamePanel;
+
 import javax.imageio.ImageIO;
 import java.awt.*;
 import java.awt.image.BufferedImage;
@@ -36,11 +38,13 @@ public class HUD {
 			30,
 			20
 		);
+
 		g.drawString(
 			player.getFire() / 100 + "/" + player.getMaxFire() / 100,
 			30,
 			40
 		);
+
 		g.drawString(
 				"" + player.getXP(),
 				30,

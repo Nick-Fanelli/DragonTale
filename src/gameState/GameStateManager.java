@@ -24,7 +24,7 @@ public class GameStateManager {
 
     public GameStateManager(Graphics2D g) {
         this.g = g;
-        setState(MENU_STATE);
+        setState(LEVEL_1_STATE);
     }
 
     public void setState(int state) {

@@ -10,10 +10,15 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="36dc5b35-c821-4ced-83a7-6e7aa45d15b9" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/entity/EndOfLevelFlag.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/artifacts/DragonTale/DragonTale.jar" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/DragonTale/DragonTale.jar" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/gameState/states/LevelsState.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/gameState/states/LevelsState.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/gameState/states/MenuState.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/gameState/states/MenuState.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/DragonTale/entity/HUD.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/DragonTale/entity/HUD.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/DragonTale/gameState/GameStateManager.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/DragonTale/gameState/GameStateManager.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/DragonTale/gameState/states/LevelsState.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/DragonTale/gameState/states/LevelsState.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/DragonTale/gameState/states/MenuState.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/DragonTale/gameState/states/MenuState.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/entity/HUD.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/entity/HUD.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/gameState/GameStateManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/gameState/GameStateManager.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -43,7 +48,9 @@
     </file-type-list>
   </component>
   <component name="ProjectId" id="1URN6Sdi3s4pOKZNgziHQw7xncQ" />
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
