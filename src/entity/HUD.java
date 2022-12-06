@@ -6,7 +6,7 @@ import java.awt.image.BufferedImage;
 
 public class HUD {
 	
-	private Player player;
+	private final Player player;
 	
 	private BufferedImage image;
 	private Font font;

@@ -2,7 +2,7 @@ package gameState.states.levels;
 
 import entity.HUD;
 import entity.Player;
-import entity.enemy.Arachnik;
+import entity.enemy.Spider;
 import entity.enemy.Slugger;
 import gameState.GameStateManager;
 import tileMap.Background;
@@ -70,7 +70,7 @@ public class Level2State extends Level {
         }
 
         for(int i = 0; i < arachniks.length; i++) {
-            Arachnik a = new Arachnik(tileMap, arachniks[i].y);
+            Spider a = new Spider(tileMap, arachniks[i].y);
             a.setPosition(arachniks[i].x, arachniks[i].y);
             enemies.add(a);
         }

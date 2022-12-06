@@ -7,7 +7,7 @@ import java.util.ArrayList;
 
 public class AudioPlayer {
 
-    private static ArrayList<AudioPlayer> players = new ArrayList<>();
+    private static final ArrayList<AudioPlayer> players = new ArrayList<>();
 
     private Clip clip;
 
@@ -36,33 +36,27 @@ public class AudioPlayer {
         }
     }
 
-    public AudioPlayer(String s) {
-        Constructor(s, 0);
-    }
+    public AudioPlayer(String s) { Constructor(s, 0); }
+    public AudioPlayer(String s, float gain) { Constructor(s, gain); }
 
-    public AudioPlayer(String s, float gain) {
-        Constructor(s, gain);
-    }
-
-    public boolean isPlaying() {
-        return clip.isRunning();
-    }
+    public boolean isPlaying() { return clip.isRunning(); }
 
     public void play() {
-        if (clip == null) return;
-        stop();
+        if (clip == null)
+            return;
+
+        this.stop();
+
         clip.setFramePosition(0);
         while (!clip.isRunning()) {
             clip.start();
         }
     }
 
-    public void stop() {
-        if (clip.isRunning()) clip.stop();
-    }
+    public void stop() { if (clip.isRunning()) clip.stop(); }
 
     public void close() {
-        stop();
+        this.stop();
         clip.close();
     }
 }

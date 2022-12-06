@@ -11,11 +11,11 @@ import java.io.InputStreamReader;
 
 public class TileMap {
 
-    // position
+    // Position
     private double x;
     private double y;
 
-    // bounds
+    // Bounds
     private int xmin;
     private int ymin;
     private int xmax;
@@ -23,7 +23,7 @@ public class TileMap {
 
     private double tween;
 
-    // map
+    // Map
     private int[][] map;
     private int tileSize;
     private int numRows;
@@ -31,12 +31,12 @@ public class TileMap {
     private int width;
     private int height;
 
-    // tileset
+    // Tileset
     private BufferedImage tileset;
     private int numTilesAcross;
     private Tile[][] tiles;
 
-    // drawing
+    // Drawing
     private int rowOffset;
     private int colOffset;
     private int numRowsToDraw;
@@ -53,30 +53,17 @@ public class TileMap {
 
         try {
 
-            tileset = ImageIO.read(
-                    getClass().getResourceAsStream(s)
-            );
+            tileset = ImageIO.read(getClass().getResourceAsStream(s));
             numTilesAcross = tileset.getWidth() / tileSize;
             tiles = new Tile[2][numTilesAcross];
 
             BufferedImage subimage;
             for(int col = 0; col < numTilesAcross; col++) {
-                subimage = tileset.getSubimage(
-                        col * tileSize,
-                        0,
-                        tileSize,
-                        tileSize
-                );
+                subimage = tileset.getSubimage(col * tileSize, 0, tileSize, tileSize);
                 tiles[0][col] = new Tile(subimage, Tile.NORMAL);
-                subimage = tileset.getSubimage(
-                        col * tileSize,
-                        tileSize,
-                        tileSize,
-                        tileSize
-                );
+                subimage = tileset.getSubimage(col * tileSize, tileSize, tileSize, tileSize);
                 tiles[1][col] = new Tile(subimage, Tile.BLOCKED);
             }
-
         }
         catch(Exception e) {
             e.printStackTrace();
@@ -89,9 +76,7 @@ public class TileMap {
         try {
 
             InputStream in = getClass().getResourceAsStream(s);
-            BufferedReader br = new BufferedReader(
-                    new InputStreamReader(in)
-            );
+            BufferedReader br = new BufferedReader(new InputStreamReader(in));
 
             numCols = Integer.parseInt(br.readLine());
             numRows = Integer.parseInt(br.readLine());
@@ -156,18 +141,11 @@ public class TileMap {
 
     public void draw(Graphics2D g) {
 
-        for(
-                int row = rowOffset;
-                row < rowOffset + numRowsToDraw;
-                row++) {
+        for(int row = rowOffset; row < rowOffset + numRowsToDraw; row++) {
 
             if(row >= numRows) break;
 
-            for(
-                    int col = colOffset;
-                    col < colOffset + numColsToDraw;
-                    col++) {
-
+            for(int col = colOffset; col < colOffset + numColsToDraw; col++) {
                 if(col >= numCols) break;
 
                 if(map[row][col] == 0) continue;

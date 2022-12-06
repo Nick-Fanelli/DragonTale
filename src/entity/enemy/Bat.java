@@ -9,10 +9,8 @@ import java.awt.image.BufferedImage;
 
 public class Bat extends Enemy {
 
-    private int startingPosX;
-    private int travelDistance;
-
-    private BufferedImage[] sprites;
+    private final int startingPosX;
+    private final int travelDistance;
 
     public Bat(TileMap tm, int startingPosX, int travelDistance) {
         super(tm);
@@ -37,9 +35,10 @@ public class Bat extends Enemy {
 
         BufferedImage spritesheet = ImageUtils.loadImage("/Sprites/Enemies/32x32-bat-sprite.png");
 
-        sprites = new BufferedImage[4];
+        BufferedImage[] sprites = new BufferedImage[4];
 
         for(int i = 0; i < sprites.length; i++) {
+            assert spritesheet != null;
             sprites[i] = spritesheet.getSubimage(i * width, 1, width, height);
         }
 
@@ -88,7 +87,6 @@ public class Bat extends Enemy {
 
     public void draw(Graphics2D g) {
         setMapPosition();
-
         super.draw(g);
     }
 

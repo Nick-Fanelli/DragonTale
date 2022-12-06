@@ -18,28 +18,17 @@ public class Enemy extends MapObject {
     protected boolean flinching;
     protected long flinchTimer;
 
-    public Enemy(TileMap tm) {
-        super(tm);
-    }
+    public Enemy(TileMap tm) { super(tm); }
 
     public boolean isDead() { return dead; }
     public int getDamage() { return damage; }
-    public int getRewardedHealth() {return rewardedHealth;}
-    public int getHealth() {
-        return health;
-    }
+    public int getRewardedHealth() { return rewardedHealth; }
+    public int getHealth() { return health; }
 
-    public int getMaxHealth() {
-        return maxHealth;
-    }
+    public int getMaxHealth() { return maxHealth; }
+    public int getRewardedFireballPower() { return rewardedFireballPower; }
 
-    public int getRewardedFireballPower() {
-        return rewardedFireballPower;
-    }
-
-    public boolean isFlinching() {
-        return flinching;
-    }
+    public boolean isFlinching() { return flinching; }
 
     private void reward(Player player) {
         player.rewardHealth(rewardedHealth);
@@ -48,10 +37,17 @@ public class Enemy extends MapObject {
     }
 
     public void hit(Player player, int damage) {
-        if(dead || flinching) return;
+        if(dead || flinching)
+            return;
+
         health -= damage;
-        if(health < 0) health = 0;
-        if(health == 0) {dead = true; reward(player);}
+
+        if(health <= 0) {
+            health = 0;
+            dead = true;
+            reward(player);
+        }
+
         flinching = true;
         flinchTimer = System.nanoTime();
     }

@@ -4,8 +4,8 @@ import java.awt.image.BufferedImage;
 
 public class Tile {
 
-    private BufferedImage image;
-    private int type;
+    private final BufferedImage image;
+    private final int type;
 
     public static final int NORMAL = 0;
     public static final int BLOCKED = 1;
@@ -15,10 +15,6 @@ public class Tile {
         this.type = type;
     }
 
-    public BufferedImage getImage() {
-        return image;
-    }
-    public int getType() {
-        return type;
-    }
+    public BufferedImage getImage() { return image; }
+    public int getType() { return type; }
 }

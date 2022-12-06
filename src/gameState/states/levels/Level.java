@@ -3,7 +3,7 @@ package gameState.states.levels;
 import audio.AudioPlayer;
 import entity.HUD;
 import entity.Player;
-import entity.enemy.Arachnik;
+import entity.enemy.Spider;
 import entity.enemy.Enemy;
 import entity.powerups.PowerUp;
 import gameState.GameState;
@@ -96,11 +96,11 @@ public abstract class Level extends GameState {
                 i--;
                 explosions.add(new Explosion(e.getx(), e.gety()));
             }
-            if(e.getClass() == Arachnik.class) {
+            if(e.getClass() == Spider.class) {
                 if (player.getx() >= e.getx()) {
                     if (player.getx() + player.getWidth() <= e.getx() + e.getWidth()) {
                         if (player.gety() <= e.gety()) {
-                            Arachnik a = (Arachnik) e;
+                            Spider a = (Spider) e;
                             if (a.isDown()) {
                                 player.hit(a.getDamage());
                             }
@@ -124,8 +124,8 @@ public abstract class Level extends GameState {
         if(bg != null) bg.draw(g);
 
         for(int i = 0; i < enemies.size(); i++) {
-            if(enemies.get(i).getClass() == Arachnik.class) {
-                Arachnik a = (Arachnik) enemies.get(i);
+            if(enemies.get(i).getClass() == Spider.class) {
+                Spider a = (Spider) enemies.get(i);
                 if(a.gety() != a.getStartPosY()) {
                     g.setColor(Color.WHITE);
                     g.drawLine(a.getx() + (int)tileMap.getx(),

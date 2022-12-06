@@ -12,7 +12,7 @@ import java.awt.*;
 
 public class GameStateManager {
 
-    private Graphics2D g;
+    private final Graphics2D g;
 
     public static int MENU_STATE = -1;
     public static int LEVELS_STATE = 0;
@@ -27,12 +27,9 @@ public class GameStateManager {
         setState(MENU_STATE);
     }
 
-    private void disposeState() {
-        activeState = null;
-    }
-
     public void setState(int state) {
         AudioPlayer.StopAllSound();
+
         if(state == MENU_STATE)
             activeState = new MenuState(this);
         if(state == LEVELS_STATE)
@@ -43,7 +40,8 @@ public class GameStateManager {
             activeState = new Level2State(this);
         if(state == LEVEL_3_STATE)
             activeState = new Level3State(this);
-        g.setColor(Color.WHITE);
+
+        g.setColor(Color.BLACK);
         g.fillRect(0, 0, GamePanel.width, GamePanel.height);
     }
 

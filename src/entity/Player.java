@@ -1,7 +1,6 @@
 package entity;
 
 import audio.AudioPlayer;
-import entity.enemy.Arachnik;
 import entity.enemy.Enemy;
 import entity.powerups.JumpCrystal;
 import entity.powerups.PowerUp;

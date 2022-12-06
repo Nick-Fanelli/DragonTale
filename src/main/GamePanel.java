@@ -4,39 +4,44 @@ import gameState.GameStateManager;
 
 import javax.swing.*;
 import java.awt.*;
-import java.awt.event.ComponentAdapter;
-import java.awt.event.ComponentEvent;
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
 import java.awt.image.BufferedImage;
 
-@SuppressWarnings("serial")
-public class GamePanel extends JPanel
-        implements Runnable, KeyListener{
+public class GamePanel extends JPanel implements Runnable, KeyListener {
 
-    public static int width = 320;
+    public static int width = 428;
     public static int height = 240;
     public static int SCALE = 2;
 
+    public static final int FPS = 60;
+    public static final double UPDATE_CAP = 1.0 / FPS;
+
     private Thread thread;
-    private boolean running;
-    private int FPS = 60;
-    private long targetTime = 1000 / FPS;
+    private boolean isRunning;
 
     private BufferedImage image;
     private Graphics2D g;
 
     private GameStateManager gsm;
 
-    public GamePanel() {
-        super();
+    private final JFrame frame;
+
+    public GamePanel(JFrame frame) {
+        this.frame = frame;
+
         setPreferredSize(new Dimension(width * SCALE, height * SCALE));
         setFocusable(true);
         requestFocus();
     }
 
+    public void onResize(Dimension size) {
+        setSize(size);
+    }
+
     public void addNotify() {
         super.addNotify();
+
         if(thread == null) {
             thread = new Thread(this);
             addKeyListener(this);
@@ -45,51 +50,63 @@ public class GamePanel extends JPanel
     }
 
     private void init() {
-
         image = new BufferedImage(width, height, BufferedImage.TYPE_INT_RGB);
         g = (Graphics2D) image.getGraphics();
 
         gsm = new GameStateManager(g);
 
-        running = true;
+        isRunning = true;
     }
 
     public void run() {
 
         init();
 
-        long start;
-        long elapsed;
-        long wait;
+        boolean shouldDraw;
 
-        while(running) {
-            start = System.nanoTime();
+        double firstTime, passedTime;
+        double lastTime = System.nanoTime() / 1000000000.0;
+        double updateTime = 0;
 
-            update();
-            draw();
-            drawToScreen();
+        while(isRunning) {
 
-            elapsed = System.nanoTime() - start;
+            shouldDraw = false;
 
-            wait = targetTime - elapsed / 1000000;
-            if(wait < 0) wait = 5;
+            firstTime = System.nanoTime() / 1000000000.0;
+            passedTime = firstTime - lastTime;
+            lastTime = firstTime;
 
-            try {
-                Thread.sleep(wait);
+            updateTime += passedTime;
+
+            while(updateTime >= UPDATE_CAP) {
+                updateTime -= UPDATE_CAP;
+                shouldDraw = true;
+
+                update();
+
             }
-            catch(Exception e) {
-                e.printStackTrace();
+
+            if(shouldDraw) {
+                draw();
+                drawToScreen();
+            } else {
+                try {
+                    Thread.sleep(1);
+                } catch (InterruptedException e) {
+                    e.printStackTrace();
+                }
             }
 
         }
 
     }
 
-    private void update() {gsm.update();}
-    private void draw() {gsm.draw(g);}
+    private void update() { gsm.update(); }
+    private void draw() { gsm.draw(g); }
+
     private void drawToScreen() {
         Graphics g2 = getGraphics();
-        g2.drawImage(image, 0, 0, width * SCALE, height * SCALE, null);
+        g2.drawImage(image, 0, 0, frame.getWidth(), frame.getHeight(), null);
         g2.dispose();
     }
 

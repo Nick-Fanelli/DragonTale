@@ -8,18 +8,20 @@ import java.awt.image.BufferedImage;
 
 public class Explosion {
 	
-	private int x;
-	private int y;
-	private int xmap;
-	private int ymap;
-	
-	private int width;
-	private int height;
-	
-	private Animation animation;
+	private final int x;
+	private final int y;
+
+	private final int width;
+	private final int height;
+
+	private int xMap;
+	private int yMap;
+
+	private final Animation animation;
+
 	private BufferedImage[] sprites;
 	
-	private boolean remove;
+	private boolean shouldRemove;
 	
 	public Explosion(int x, int y) {
 		
@@ -38,13 +40,9 @@ public class Explosion {
 			);
 			
 			sprites = new BufferedImage[6];
+
 			for(int i = 0; i < sprites.length; i++) {
-				sprites[i] = spritesheet.getSubimage(
-					i * width,
-					0,
-					width,
-					height
-				);
+				sprites[i] = spritesheet.getSubimage(i * width, 0, width, height);
 			}
 			
 		}
@@ -61,22 +59,22 @@ public class Explosion {
 	public void update() {
 		animation.update();
 		if(animation.hasPlayedOnce()) {
-			remove = true;
+			shouldRemove = true;
 		}
 	}
 	
-	public boolean shouldRemove() { return remove; }
+	public boolean shouldRemove() { return shouldRemove; }
 	
 	public void setMapPosition(int x, int y) {
-		xmap = x;
-		ymap = y;
+		xMap = x;
+		yMap = y;
 	}
 	
 	public void draw(Graphics2D g) {
 		g.drawImage(
 			animation.getImage(),
-			x + xmap - width / 2,
-			y + ymap - height / 2,
+			x + xMap - width / 2,
+			y + yMap - height / 2,
 			null
 		);
 	}

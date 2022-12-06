@@ -14,8 +14,6 @@ public abstract class PowerUp extends MapObject {
     public static final String pathBlueCrystal = "/Tilesets/Crystals/crystal-qubodup-ccby3-32-green.png";
     public static final BufferedImage blueCrystals = ImageUtils.loadImage(pathBlueCrystal);
 
-    private BufferedImage[] sprites;
-
     protected boolean shouldBeRemoved = false;
 
     public enum Color {
@@ -30,14 +28,12 @@ public abstract class PowerUp extends MapObject {
         cwidth = 20;
         cheight = 20;
 
-        sprites = new BufferedImage[8];
+        BufferedImage[] sprites = new BufferedImage[8];
 
-        switch (color) {
-            case GREEN:
-                for(int i = 0; i < sprites.length; i++) {
-                    sprites[i] = blueCrystals.getSubimage(i * width, 0, width, height);
-                }
-                break;
+        if (color == Color.GREEN) {
+            for (int i = 0; i < sprites.length; i++) {
+                sprites[i] = blueCrystals.getSubimage(i * width, 0, width, height);
+            }
         }
 
         animation = new Animation();
@@ -60,7 +56,6 @@ public abstract class PowerUp extends MapObject {
     }
 
     public void update() {
-
         animation.update();
     }
 
