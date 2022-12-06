@@ -33,9 +33,9 @@ public class Background {
         this.dy = dy;
     }
 
-    public void update() {
-        x += dx;
-        y += dy;
+    public void update(float deltaTime) {
+        x += dx * deltaTime;
+        y += dy * deltaTime;
     }
 
     public void draw(Graphics2D g) {

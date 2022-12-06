@@ -62,8 +62,8 @@ public class Level1State extends Level {
     }
 
     @Override
-    public void update() {
-        super.update();
+    public void update(float deltaTime) {
+        super.update(deltaTime);
         if(gsm.getActiveState() == this && !backgroundMusic.isPlaying()) {
             backgroundMusic.play();
         }

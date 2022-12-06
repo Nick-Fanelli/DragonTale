@@ -83,9 +83,8 @@ public class Level2State extends Level {
     }
 
     @Override
-    public void update() {
-        super.update();
-        System.out.printf("Player X: %s, Y: %s%n", player.getx(), player.gety());
+    public void update(float deltaTime) {
+        super.update(deltaTime);
         if(gsm.getActiveState() == this && !backgroundMusic.isPlaying()) {
             backgroundMusic.play();
         }

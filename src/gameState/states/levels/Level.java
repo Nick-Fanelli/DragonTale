@@ -51,7 +51,7 @@ public abstract class Level extends GameState {
     }
 
     @Override
-    public void update() {
+    public void update(float deltaTime) {
         if(player != null) {
             player.update();
 
@@ -76,7 +76,7 @@ public abstract class Level extends GameState {
         }
 
         if(bg != null) {
-            bg.update();
+            bg.update(deltaTime);
             bg.setPosition(tileMap.getx(), tileMap.gety());
         }
 
@@ -157,7 +157,11 @@ public abstract class Level extends GameState {
 
     @Override
     public void keyPressed(int k) {
-        if(k == KeyEvent.VK_ESCAPE) gsm.setState(GameStateManager.LEVELS_STATE);
+        if(k == KeyEvent.VK_ESCAPE) {
+            gsm.setState(GameStateManager.LEVELS_STATE);
+            System.out.println("Escape Key Pressed");
+        }
+
         if(player != null) {
             if(k == KeyEvent.VK_LEFT) player.setLeft(true);
             if(k == KeyEvent.VK_RIGHT) player.setRight(true);

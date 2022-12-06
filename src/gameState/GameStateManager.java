@@ -24,7 +24,7 @@ public class GameStateManager {
 
     public GameStateManager(Graphics2D g) {
         this.g = g;
-        setState(LEVEL_1_STATE);
+        setState(LEVELS_STATE);
     }
 
     public void setState(int state) {
@@ -49,8 +49,8 @@ public class GameStateManager {
         return activeState;
     }
 
-    public void update() {if(activeState != null) activeState.update();}
-    public void draw(Graphics2D g) {if(activeState != null) activeState.draw(g);}
-    public void keyPressed(int key) {if(activeState != null) activeState.keyPressed(key);}
-    public void keyReleased(int key) {if(activeState != null) activeState.keyReleased(key);}
+    public void update(float deltaTime) { if(activeState != null) activeState.update(deltaTime); }
+    public void draw(Graphics2D g) { if(activeState != null) activeState.draw(g); }
+    public void keyPressed(int key) { if(activeState != null) activeState.keyPressed(key); }
+    public void keyReleased(int key) { if(activeState != null) activeState.keyReleased(key); }
 }

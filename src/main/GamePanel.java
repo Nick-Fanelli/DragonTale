@@ -64,6 +64,10 @@ public class GamePanel extends JPanel implements Runnable, KeyListener {
 
         boolean shouldDraw;
 
+        double currentUpdateTime;
+        double lastUpdateTime = System.nanoTime() / 1000000000.0;
+        double deltaTime = 0;
+
         double firstTime, passedTime;
         double lastTime = System.nanoTime() / 1000000000.0;
         double updateTime = 0;
@@ -82,8 +86,12 @@ public class GamePanel extends JPanel implements Runnable, KeyListener {
                 updateTime -= UPDATE_CAP;
                 shouldDraw = true;
 
-                update();
+                // Calculate Delta Time
+                currentUpdateTime = System.nanoTime() / 1000000000.0;
+                deltaTime = currentUpdateTime - lastUpdateTime;
+                lastUpdateTime = currentUpdateTime;
 
+                update((float) deltaTime);
             }
 
             if(shouldDraw) {
@@ -101,7 +109,7 @@ public class GamePanel extends JPanel implements Runnable, KeyListener {
 
     }
 
-    private void update() { gsm.update(); }
+    private void update(float deltaTime) { gsm.update(deltaTime); }
     private void draw() { gsm.draw(g); }
 
     private void drawToScreen() {

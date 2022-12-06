@@ -54,8 +54,8 @@ public class Level3State extends Level {
     }
 
     @Override
-    public void update() {
-        super.update();
+    public void update(float deltaTime) {
+        super.update(deltaTime);
     }
 
     @Override

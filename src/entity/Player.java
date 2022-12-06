@@ -182,8 +182,8 @@ public class Player extends MapObject {
                     if(
                             e.getx() > x &&
                                     e.getx() < x + scratchRange &&
-                                    e.gety() > y - height / 2 &&
-                                    e.gety() < y + height / 2
+                                    e.gety() > y - height / 2f &&
+                                    e.gety() < y + height / 2f
                     ) {
                         e.hit(this, scratchDamage);
                     }
@@ -192,8 +192,8 @@ public class Player extends MapObject {
                     if(
                             e.getx() < x &&
                                     e.getx() > x - scratchRange &&
-                                    e.gety() > y - height / 2 &&
-                                    e.gety() < y + height / 2
+                                    e.gety() > y - height / 2f &&
+                                    e.gety() < y + height / 2f
                     ) {
                         e.hit(this, scratchDamage);
                     }

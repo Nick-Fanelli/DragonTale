@@ -27,7 +27,7 @@ public class MenuState extends GameState {
         super(gsm);
 
         bg = new Background("/Backgrounds/menubg.gif", 1);
-        bg.setVector(-0.1, 0);
+        bg.setVector(-2, 0);
 
         titleColor = new Color(0, 100, 128);
         titleFont = new Font("Arial", Font.PLAIN, 28);
@@ -37,8 +37,8 @@ public class MenuState extends GameState {
     @Override public void init() {}
 
     @Override
-    public void update() {
-        bg.update();
+    public void update(float deltaTime) {
+        bg.update(deltaTime);
     }
 
     @Override
