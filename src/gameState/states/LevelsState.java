@@ -9,19 +9,19 @@ import java.awt.event.KeyEvent;
 
 public class LevelsState extends GameState {
 
-    private Background bg;
+    private final Background bg;
 
     private int currentChoice = 0;
-    private String[] options = {
+    private final String[] options = {
             "Level 1",
             "Level 2",
             "Level 3"
     };
 
-    private Color titleColor;
-    private Font titleFont;
+    private final Color titleColor;
+    private final Font titleFont;
 
-    private Font font;
+    private final Font font;
 
     public LevelsState(GameStateManager gsm) {
         super(gsm);
@@ -30,7 +30,7 @@ public class LevelsState extends GameState {
         bg.setVector(-0.1, 0);
 
         titleColor = new Color(0, 100, 128);
-        titleFont = new Font("Century Gothic", Font.PLAIN, 28);
+        titleFont = new Font("Arial", Font.PLAIN, 28);
         font = new Font("Arial", Font.PLAIN, 12);
     }
 
